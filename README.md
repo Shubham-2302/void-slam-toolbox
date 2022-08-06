@@ -48,10 +48,6 @@ Now that you in the docker container
 ros2 launch igt_ignition igt_ignition.launch.py
 ```
 
-<img src="./images/igt_gazebo.png" width=800/>
-<img src="./images/ign_gazebo_image_display.png" width=800/>
-
-
 Make sure you UNPAUSE physics by clicking "play" button in bottom left corner of ignition
 
  
