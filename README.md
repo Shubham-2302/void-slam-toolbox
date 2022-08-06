@@ -28,7 +28,7 @@ source install/setup.bash
   `sudo docker build -t stevemacenski/slam_toolbox galactic .`
   
 
-##RUN 
+## RUN 
 
 > Slam Toolbox inside docker container
 Open another terminal
@@ -60,7 +60,7 @@ Open another terminal and run
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
-###Refernces 
+### Refernces 
 * https://github.com/TechnoYantra/ros2-igt
 * https://github.com/SteveMacenski/slam_toolbox
 
