@@ -1,12 +1,11 @@
 # Void-Slam-Toolbox
-Simplified wrapper around slam_toolbox 
-
-`sudo docker build -t stevemacenski/slam_toolbox galactic .`
+Simplified wrapper around slam_toolbox. 
+This repo utilises docker to create a docker image for [SLAM Toolbox](https://github.com/SteveMacenski/slam_toolbox) by SteveMacenski and uses [IGT repo](https://github.com/TechnoYantra/ros2-igt) to test the networking between ROS Host and Docker container 
 
 ## Installation
-  * Install [Ignition-Edifice](https://gazebosim.org/docs/edifice/install_ubuntu_src) or greater (Source is preffered).
-  * Build ros_ign packages for galactic  from [source](https://github.com/gazebosim/ros_gz/tree/galactic) 
   * Install [Docker](https://docs.docker.com/engine/install/ubuntu/)
+  * Install [Ignition-Fortress](https://gazebosim.org/docs/fortress/install_ubuntu).
+  * Build ros_ign packages for humble  from [source](https://github.com/gazebosim/ros_gz/tree/ros2) 
   
 * Create a workspace
 
@@ -24,21 +23,25 @@ source install/setup.bash
 ```
 
   * Build the docker image
+
+  Note: For ROS humble users slamtoolbox ros distro is set to galactic 
   
-  `sudo docker build -t stevemacenski/slam_toolbox galactic .`
+  `sudo docker build -t stevemacenski/slam_toolbox .`
   
 
-## RUN 
+## Testing 
 
 > Slam Toolbox inside docker container
 Open another terminal
   
-`sudo docker run --net=host -it stevemacenski/slam_toolbox:galactic `
+`sudo docker run --net=host -it stevemacenski/slam_toolbox `
 
 Now that you in the docker container 
 
 `source install/setup.bash`
 `ros2 launch slam-toolbox online_async_launch.py`
+
+In a host terminal launch `ros2 topic list` to check the slam_toolbox is running
 
 ## Launch
 
@@ -56,8 +59,7 @@ Open another terminal and run
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
+Note: This repo stands as a guide for any ros distribution and the associated ignition gazebo version, Refer to this [table](https://github.com/gazebosim/ros_gz/tree/ros2) for more info. After cloning the repo change the value of $ROS_DISTRO based on the ROS distribution you are using
 ### Refernces 
 * https://github.com/TechnoYantra/ros2-igt
 * https://github.com/SteveMacenski/slam_toolbox
-
-

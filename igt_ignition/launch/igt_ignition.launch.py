@@ -33,6 +33,14 @@ def generate_launch_description():
 		condition = IfCondition(LaunchConfiguration('with_bridge'))
 	)
 
+	#RVIZ
+	rviz = Node(
+		package='rviz2',
+		executable='rviz2',
+		arguments=['-d', os.path.join('pkg_igt_ignition', 'rviz', 'igt_void_slam.rviz')],
+		condition=IfCondition(LaunchConfiguration('rviz'))
+	)
+
 	# spawn sdf
 	spawn_sdf = Node(package='ros_ign_gazebo', executable='create',
 			arguments=['-name', 'igt_one',
@@ -63,9 +71,12 @@ def generate_launch_description():
 					description='Launch simulation with ros ign brigde'),
         DeclareLaunchArgument('use_sim_time', default_value=['true'],
                     description='Enable sim time from /clock'),
+        DeclareLaunchArgument('rviz', default_value='true',
+                              description='Open RViz.'),					
 		gazebo,
 		spawn_sdf,
 		ign_bridge,
+		rviz,
 		state_publisher
 	])
 
