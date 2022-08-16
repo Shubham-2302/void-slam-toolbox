@@ -60,7 +60,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 ## Results
 
-![]https://github.com/void-robotics/void-slam-toolbox/blob/master/SLAM_ignition.gif
+![](https://github.com/void-robotics/void-slam-toolbox/blob/master/SLAM_ignition.gif)
 
 Note: This repo stands as a guide for any ros distribution and the associated ignition gazebo version, Refer to this [table](https://github.com/gazebosim/ros_gz/tree/ros2) for more info. After cloning the repo change the value of $ROS_DISTRO based on the ROS distribution you are using
 
