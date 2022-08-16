@@ -1,5 +1,6 @@
 # Void-Slam-Toolbox
 Simplified wrapper around slam_toolbox. 
+
 This repo utilises docker to create a docker image for [SLAM Toolbox](https://github.com/SteveMacenski/slam_toolbox) by SteveMacenski and uses [IGT repo](https://github.com/TechnoYantra/ros2-igt) to test the networking between ROS Host and Docker container 
 
 ## Installation
@@ -36,7 +37,7 @@ Open another terminal
   
 `sudo docker run --net=host -it stevemacenski/slam_toolbox `
 
-Now that you in the docker container 
+Now that you are in the docker container 
 
 `source install/setup.bash`
 `ros2 launch slam-toolbox online_async_launch.py`
@@ -62,8 +63,8 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ![](https://github.com/void-robotics/void-slam-toolbox/blob/master/SLAM_ignition.gif)
 
-Note: This repo stands as a guide for any ros distribution and the associated ignition gazebo version, Refer to this [table](https://github.com/gazebosim/ros_gz/tree/ros2) for more info. After cloning the repo change the value of $ROS_DISTRO based on the ROS distribution you are using
+> Note: This repo stands as a guide for any ros distribution and the associated ignition gazebo version, Refer to this [table](https://github.com/gazebosim/ros_gz/tree/ros2) for more info. After cloning the repo change the value of $ROS_DISTRO based on the ROS distribution you are using
 
-### Refernces 
+### References 
 * https://github.com/TechnoYantra/ros2-igt
 * https://github.com/SteveMacenski/slam_toolbox
